@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>快乐购商城 - 用户注册</title>
+		<link rel="shortcut icon" type="image/x-icon" href="images/kuaile.png" />
+		<link rel="stylesheet" href="server/css/register.css" />
+		<script type="text/javascript" src="server/js/jquery.js"></script>
+		
+	</head>
+
+	<body>
+		<div class="header">
+			<a href="index.html"><img src="images/logo.jpg" class="logo"></a>
+			<img src="images/top_center.jpg" class="logo1" />
+		</div>
+		<div class="content">
+			<img src="images/05657833660318005.jpg" />
+			<form>
+				<div class="c">
+					<h2>用户注册</h2><span>已有账号<a href="login.html" target="_blank">在此登录</a></span></div>
+
+				<input type="text" id="tel" value="" name="tel" placeholder="请输入手机号码"  onclick="ptel.innerHTML = '请输入11位有效手机号码'" onblur="ptel.innerHTML=''"/>
+				<p id="ptel"></p>
+				
+				<input type="password" id="pwd" value="" name="pwd" placeholder="请输入密码" onclick="ppwd.innerHTML = '请输入六位数密码，您的密码可能为数字、字母或符号组合'" onblur="ppwd.innerHTML=''"/>
+				<p id="ppwd"></p>
+				<input type="password" id="ipwd" value="" name="ipwd" placeholder="请再次输入密码" onclick="pPwd.innerHTML = '请再次输入密码'"/>
+				<p id="pPwd"></p>
+				<div>
+					<input type="text" value="" id="yzm" name="yzm" placeholder="验证码" onclick="py.innerHTML = '请输入右侧验证码'" onblur="py.innerHTML=''"/>
+					<div id="box" ></div>
+					<a href="javascript:;" id="aa" >换一张</a>
+					<p id="py"></p>
+				</div>
+
+				<input type="button" value="立即注册" id="regist" />
+
+				<div class="tk"><input type="checkbox" checked="checked" />
+					<p class="tk-t">注册表示同意快乐购
+						<a href="http://www.happigo.com/news-7.html" target="_blank">《用户服务协议》</a>条款</p>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			let oa=document.getElementById("aa");						
+			new Num()
+			oa.onclick= function() {
+				new Num();
+			}			
+			function Num(){
+				var newStr="";				
+				var str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+				for(var i = 0;i < 4;i ++){
+						newStr += str.charAt(Math.floor(Math.random() * str.length));
+						box.innerHTML=newStr;													
+					}
+			}				
+		</script>
+		<!--<script>
+        $('#regist').click(function(){           
+            var data= $("form").serializeArray();
+             $.post("regist.php", data, function(obj){                            
+             if( obj.status=="success" ){
+                  location.href = "login.html";
+
+              }else{
+                  location.href = "register.html";
+                  alert(obj.msg);
+              }
+            }, "JSON")
+         });
+    </script>-->
+
+		<div class="bottom">
+			<p>Copyright&copy; 2006-2018 happigo .All Right Reserved 免费服务热线：400-705-1111 | 固话也可拨打：400-705-8800 E-Mail:service@happigo.com</p>
+			<p>湘ICP备17009657号 "信息网络传播视听节目许可证号:1810530"<img src="images/jh.png"> 湘公网安备 43010502000556号</p>
+			<div class="b-l">
+				<a href="http://www.itrust.org.cn/home/index/itrust_certifi/wm/2782875193.html" target="_blank"><img src="images/foot_img3.png"></a>
+				<a href="https://search.szfw.org/cert/l/CX20150428007576007720" target="_blank"><img src="images/foot_img4.png"></a>
+			</div>
+
+		</div>
+	</body>
+
+</html>
